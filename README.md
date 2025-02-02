@@ -123,7 +123,8 @@ npm run report
 
 Example of Allure Report:
 
-![Allure Report Example](./images/allure-report.png)
+![Allure Report](https://github.com/user-attachments/assets/ea4d21be-c39d-43e1-bee6-618f94ec28b0)
+
 
 You can also view the latest Allure report on GitHub Pages:
 [GitHub Pages Allure Report](https://alexkomanov.github.io/takenote-app-test/4/index.html)
