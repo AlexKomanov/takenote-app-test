@@ -39,7 +39,7 @@ test.describe(DESCRIBE_NAME, {
         await tms(JIRA_LINK, "JIRA_LINK");
         
         const complexMarkdownFile = fs.readFileSync(
-            path.join(__dirname, '../fixtures/test-content.md'),
+            path.join(__dirname, '../../fixtures/test-content.md'),
             'utf8'
         );
 
