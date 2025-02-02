@@ -1,0 +1,54 @@
+{
+    "notes": [
+        {
+            "id": "8895307c-0ef9-40d3-ae98-960db26b0bf2",
+            "text": "# Updated Scratchpad\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "category": "",
+            "scratchpad": true,
+            "favorite": false,
+            "created": "2025-01-31T18:41:40+02:00",
+            "lastUpdated": "2025-01-31T18:41:40+02:00"
+        },
+        {
+            "id": "6c1e790f-52a8-42d9-a4b6-dd466a9b7d9f",
+            "text": "# Welcome Back to Takenote!\n\n...",
+            "category": "62e433f9-5f68-43fc-abab-d6760b30c5d8",
+            "favorite": false,
+            "created": "2025-01-31T18:41:40+02:00",
+            "lastUpdated": "2025-01-31T18:41:40+02:00"
+        }
+    ],
+    "categories": [
+        {
+            "id": "62e433f9-5f68-43fc-abab-d6760b30c5d8",
+            "name": "Category 1",
+            "draggedOver": false
+        },
+        {
+            "id": "c90b7a75-46d6-4651-9903-0a2375c0f62d",
+            "name": "Category 2",
+            "draggedOver": false
+        }
+    ],
+    "settings": {
+        "previewMarkdown": true,
+        "darkTheme": true,
+        "sidebarVisible": true,
+        "notesSortKey": "lastUpdated",
+        "codeMirrorOptions": {
+            "mode": "gfm",
+            "theme": "new-moon",
+            "lineNumbers": false,
+            "lineWrapping": true,
+            "styleActiveLine": {
+                "nonEmpty": true
+            },
+            "viewportMargin": null,
+            "keyMap": "default",
+            "dragDrop": false,
+            "direction": "ltr",
+            "scrollPastEnd": false
+        },
+        "loading": false
+    }
+}
