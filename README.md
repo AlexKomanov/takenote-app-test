@@ -2,6 +2,10 @@
 
 This project contains automated tests for the TakeNote application using Playwright, Artillery for load testing, and Allure for reporting.
 
+## GitHub Repository
+
+https://github.com/AlexKomanov/takenote-app-test
+
 ## Prerequisites
 
 Before running the tests, make sure you have the following installed:
