@@ -1,12 +1,12 @@
-import { test } from '../fixtures/test.fixture';
-import { Components, TestSuites } from '../helpers/utils.helper';
+import { test } from '../../fixtures/test.fixture';
+import { Components, TestSuites } from '../../helpers/utils.helper';
 import { parentSuite, suite, tms } from "allure-js-commons";
 
 const JIRA_LINK = 'wwww.example.com/';
 const DESCRIBE_NAME = 'SETTINGS FUNCTIONALITY';
 const SUITE_NAME = 'Settings';
-import { FooterOption } from '../pages/editor.component';
-import { SettingsToggle } from '../pages/settings.component';
+import { FooterOption } from '../../pages/editor.component';
+import { SettingsToggle } from '../../pages/settings.component';
 
 test.describe(DESCRIBE_NAME, {
     tag: [TestSuites.REGRESSION, Components.SETTINGS],

@@ -6,7 +6,6 @@ export default class BasePage {
     public async goto() {
         await test.step('Navigate to app and wait for load', async () => {
             await this.page.goto('https://takenote.dev/app');
-            await this.page.waitForLoadState('networkidle');
         });
     }
 

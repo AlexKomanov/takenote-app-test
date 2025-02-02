@@ -1,5 +1,5 @@
-import { test } from '../fixtures/test.fixture';
-import { Components, TestSuites } from '../helpers/utils.helper';
+import { test } from '../../fixtures/test.fixture';
+import { Components, TestSuites } from '../../helpers/utils.helper';
 import { parentSuite, suite, tms } from "allure-js-commons";
 const fs = require('fs');
 const path = require('path');

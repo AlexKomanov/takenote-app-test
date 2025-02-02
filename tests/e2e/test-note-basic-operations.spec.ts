@@ -1,12 +1,12 @@
-import { test } from '../fixtures/test.fixture';
-import { Components, TestSuites } from '../helpers/utils.helper';
+import { test } from '../../fixtures/test.fixture';
+import { Components, TestSuites } from '../../helpers/utils.helper';
 import { parentSuite, suite, tms } from "allure-js-commons";
 
 const JIRA_LINK = 'wwww.example.com/';
 const DESCRIBE_NAME = 'NOTE BASIC OPERATIONS';
 const SUITE_NAME = 'Notes';
 
-import { NoteOption } from '../pages/notes-manager-component.page';
+import { NoteOption } from '../../pages/notes-manager-component.page';
 
 test.describe(DESCRIBE_NAME, {
     tag: [TestSuites.REGRESSION, TestSuites.SANITY, TestSuites.SMOKE, Components.NOTES_MANAGER],
