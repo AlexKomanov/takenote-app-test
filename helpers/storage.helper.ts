@@ -1,6 +1,6 @@
 import test, { Page, expect } from '@playwright/test';
 import { AppState, Note, Category } from '../types/note.types';
-import testData from '../fixtures/test-data.json';
+import testData from '../data/test-data.json';
 
 export class StorageHelper {
     constructor(private page: Page) {}
