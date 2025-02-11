@@ -5,7 +5,7 @@ import testData from '../data/test-data.json';
 export class StorageHelper {
     constructor(private page: Page) {}
 
-    async initializeStorage(state: AppState = testData as AppState) {
+    public async initializeStorage(state: AppState = testData as AppState) {
         await test.step('Initialize storage with test data', async () => {
             await this.page.evaluate((data) => {
                 localStorage.setItem('notes', JSON.stringify(data.notes));
@@ -15,7 +15,7 @@ export class StorageHelper {
         });
     }
 
-    async getNotes(): Promise<Note[]> {
+    public async getNotes(): Promise<Note[]> {
         return await test.step('Get notes from storage', async () => {
             return this.page.evaluate(() => {
                 return JSON.parse(localStorage.getItem('notes') || '[]');
@@ -23,7 +23,7 @@ export class StorageHelper {
         });
     }
 
-    async verifyNoteExistsInLocalStorage(noteContent: string) {
+    public async verifyNoteExistsInLocalStorage(noteContent: string) {
         await test.step(`Verify note '${noteContent}' exists in storage`, async () => {
             await expect.poll(async () => {
                 const notes = await this.getNotes();
@@ -32,7 +32,7 @@ export class StorageHelper {
         });
     }
 
-    async getCategories(): Promise<Category[]> {
+    public async getCategories(): Promise<Category[]> {
         return await test.step('Get categories from storage', async () => {
             return this.page.evaluate(() => {
                 return JSON.parse(localStorage.getItem('categories') || '[]');
@@ -40,7 +40,7 @@ export class StorageHelper {
         });
     }
 
-    async verifyCategoryExistsInLocalStorage(categoryName: string) {
+    public async verifyCategoryExistsInLocalStorage(categoryName: string) {
         await test.step(`Verify category '${categoryName}' exists in storage`, async () => {
             await expect.poll(async () => {
                 const categories = await this.getCategories();
@@ -49,7 +49,7 @@ export class StorageHelper {
         });
     }
 
-    async getNoteUUIDLink(noteTitle: string): Promise<string> {
+    public async getNoteUUIDLink(noteTitle: string): Promise<string> {
         return await test.step(`Get UUID link for note '${noteTitle}'`, async () => {
             const notes = await this.getNotes();
             const note = notes.find(note => note.text.includes(noteTitle));
