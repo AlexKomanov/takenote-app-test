@@ -1,6 +1,5 @@
 import BasePage from './base.page';
 import { expect, Page, test } from '@playwright/test';
-import { NoteOption } from './notes-manager-component.page';
 
 export enum FooterOption {
     PREVIEW = 'Preview note',
@@ -18,13 +17,10 @@ export default class EditorComponent extends BasePage {
     private readonly newNoteButton = this.page.getByTestId('sidebar-action-create-new-note');
     private readonly editorTextArea = this.page.locator('.CodeMirror textarea');
     private readonly previewButton = this.page.getByTestId('preview-mode');
-    private readonly previewContent = this.page.locator('.preview');
     private readonly previewArea = this.page.locator('.previewer');
-    private readonly noteTitle = this.page.getByTestId('note-title');
-    private readonly markdownContent = this.page.locator('.markdown');
     private readonly footerIcon = this.page.locator('span.sr-only');
-    private readonly copyLinkButton = this.page.getByTestId('note-option-copy-link');
     private readonly syncNotesButton = this.page.getByTestId('topbar-action-sync-notes');
+    private readonly noteListItem = this.page.locator('[class="react-codemirror2 editor mousetrap"]');
     
     
     constructor(protected page: Page) {
@@ -42,7 +38,7 @@ export default class EditorComponent extends BasePage {
             await this.newNoteButton.click();
         });
         
-        await test.step('Typing a new content', async () => {
+        await test.step(`Typing a new content: '${content}'`, async () => {
             await this.editorTextArea.pressSequentially(content, {delay: 50});
         });
 
@@ -67,8 +63,7 @@ export default class EditorComponent extends BasePage {
 
     public async validateNoteContent(expectedContent: string) {
         await test.step('Validate note content', async () => {
-            const noteListItem = this.page.locator('[class="react-codemirror2 editor mousetrap"]');
-            await expect(noteListItem, 'Note content should match input')
+            await expect(this.noteListItem, 'Note content should match input')
                 .toContainText(expectedContent, {useInnerText: true});
         });
     }
@@ -104,7 +99,6 @@ export default class EditorComponent extends BasePage {
             await expect(lineNumbers).toBeVisible();
             const numbers = await lineNumbers.all();
             for (let i = 0; i < numbers.length; i++) {
-                const text = await numbers[i].textContent();
                 await expect(numbers[i]).toHaveText(String(i + 1));
             }
         });
